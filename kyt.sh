@@ -88,4 +88,4 @@ echo -e "  ${u}└────────────────────�
 echo -e ""
 history -c
 read -p "  Presione [ Enter ] para regresar al menú"
-menu
+add-bot-panel
