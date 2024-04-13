@@ -48,12 +48,15 @@ print_success "ByJERRY®"
 }
 netfilter-persistent
 clear
+figlet 'MODs By JERRY-SBG' | lolcat
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[1;97;101m        ACTUALIZACION DE SCRIPT           \e[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e "  \033[1;91m Servicio de Actualización de Script\033[1;37m"
+echo -e "  \033[1;91m Descargando y Actualizando el Script\033[1;37m"
+echo -e ""
 fun_bar 'res1'
+echo -e ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Presione [ Enter ] para regresar al MENU"
