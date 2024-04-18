@@ -17,6 +17,12 @@ GRAY="\e[1;30m"
 NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
+TIME=$(date '+%d %b %Y')
+ipsaya=$(wget -qO- ipinfo.io/ip)
+TIMES="10"
+CHATID="833821933"
+KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 
 # ===================
 clear
@@ -326,8 +332,8 @@ TIMES="10"
 CHATID="833821933"
 KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $1}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
+USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $3}')
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
@@ -340,7 +346,7 @@ TEXT="
 <code>Ip vps : </code><code>$ipsaya</code>
 <code>Exp Sc : </code><code>$EXPSC</code>
 <code>────────────────────</code>
-<i>Automatic Notification from Github</i>
+<i>Automatic Notification BY JERRY®</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/Jerry_SBG"},{"text":"Contack","url":"https://wa.me/+529241293310"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
