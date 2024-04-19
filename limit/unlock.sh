@@ -22,7 +22,7 @@ YellowBe="\033[5;33m"
 BlueBe="\033[5;34m"
 # . Liner
 function baris_panjang() {
-  echo -e "${BlueCyan} ———————————————————————————————————————————————${Xark}"
+  echo -e "${BlueCyan} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Xark}"
 }
 function Lunatic_Banner() {
 clear
@@ -34,8 +34,8 @@ baris_panjang
 function Sc_Credit(){
 sleep 1
 baris_panjang
-echo -e       "${ungu}          Gracias por usar-       ${Xark}"
-echo -e       "${ungu}         Script Credit By SBG-VPS By JERRY      ${Xark}"
+echo -e       "${ungu}          Gracias por usar       ${Xark}"
+echo -e       "${ungu}         SCRIPT By JERRY-SBG       ${Xark}"
 baris_panjang
 exit 1
 }

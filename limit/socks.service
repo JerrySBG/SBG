@@ -1,5 +1,5 @@
 [Unit]
-Description=Python Proxy DragonTunneling
+Description=Python Proxy JerrySBG
 Documentation=https://t.me/Renzy_Store
 After=network.target nss-lookup.target
 
