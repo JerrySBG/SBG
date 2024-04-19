@@ -50,7 +50,7 @@ fi
 
 cat > /etc/systemd/system/kyt.service << END
 [Unit]
-Description=Simple Bot Tele By - @RanTempest
+Description=Simple Bot Tele By - @ByJERRY
 After=network.target
 
 [Service]
