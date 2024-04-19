@@ -1,5 +1,6 @@
 #!/bin/bash
 ### Color
+timedatectl set-timezone America/Denver
 apt upgrade -y
 apt update -y
 apt install lolcat -y
@@ -270,6 +271,7 @@ function base_package() {
     clear
     ########
     print_install "Instalación de Paquetes"
+    timedatectl set-timezone America/Denver
     apt install zip pwgen openssl netcat socat cron bash-completion -y
     apt install figlet -y
     apt update -y
