@@ -339,16 +339,16 @@ EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | g
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
-<b> 🟢 NOTIFICATIONS INSTALL 🟢</b>
+<b> 🟢 AUTOSCRIPT MOD By JERRY® 🟢</b>
 <code>────────────────────</code>
-<code>ID     : </code><code>$USRSC</code>
-<code>Domain : </code><code>$domain</code>
-<code>Date   : </code><code>$TIME</code>
-<code>Time   : </code><code>$TIMEZONE</code>
-<code>Ip vps : </code><code>$ipsaya</code>
-<code>Exp Sc : </code><code>$EXPSC</code>
+<code>USUARIO : </code><code>$USRSC</code>
+<code>DOMINIO : </code><code>$domain</code>
+<code>FECHA   : </code><code>$TIME</code>
+<code>HORA    : </code><code>$TIMEZONE</code>
+<code>Ip VPS  : </code><code>$ipsaya</code>
+<code>Exp Sc  : </code><code>$EXPSC</code>
 <code>────────────────────</code>
-<i>Automatic Notification BY JERRY®</i>
+<i>Aviso de Instalacion Correcta®</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/Jerry_SBG"},{"text":"Contack","url":"https://wa.me/+529241293310"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -804,16 +804,167 @@ function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
     wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws.service
-    chmod +x /usr/bin/ws
-    chmod 644 /usr/bin/tun.conf
-systemctl disable ws
-systemctl stop ws
-systemctl enable ws
-systemctl start ws
-systemctl restart ws
+    
+# Getting Proxy Template
+wget -q -O /usr/local/bin/ws-nontls "${REPO}websocket/websocket.py"
+#cp /root/myproject/websocket/websocket.py /usr/local/bin/ws-nontls
+chmod +x /usr/local/bin/ws-nontls
+
+# Installing Service
+cat > /etc/systemd/system/ws-nontls.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 80
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-nontls
+systemctl restart ws-nontls
+
+# Installing Service
+cat > /etc/systemd/system/ws-nontls2.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 8080
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-nontls2
+systemctl restart ws-nontls2
+
+# Installing Service
+cat > /etc/systemd/system/ws-nontls3.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 8280
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-nontls3
+systemctl restart ws-nontls3
+
+# Installing Service
+cat > /etc/systemd/system/ws-nontls4.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 8880
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-nontls4
+systemctl restart ws-nontls4
+
+# Getting Proxy Template
+wget -q -O /usr/local/bin/ws-ovpn "${REPO}websocket/ws-ovpn.py"
+#cp /root/myproject/websocket/ws-ovpn.py /usr/local/bin/ws-ovpn
+chmod +x /usr/local/bin/ws-ovpn
+
+# Installing Service
+cat > /etc/systemd/system/ws-ovpn.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn 2086
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-ovpn
+systemctl restart ws-ovpn
+
+# Getting Proxy Template
+wget -q -O /usr/local/bin/ws-tls "${REPO}websocket/ws-tls"
+
+chmod +x /usr/local/bin/ws-tls
+
+# Installing Service
+cat > /etc/systemd/system/ws-tls.service << END
+[Unit]
+Description=Python Proxy Mod By Jerry
+Documentation=https://t.me/Jerry_SBG
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-tls 443
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-nontls
+systemctl restart ws-nontls
+systemctl enable ws-tls
+systemctl restart ws-tls
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1

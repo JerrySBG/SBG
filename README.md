@@ -8,17 +8,16 @@
 
 ### TESTEADO EN S.O 
 - UBUNTU 20.04.05
-- DEBIAN 10
 
 ### OTRAS CARACTERISTICAS
-- Agregar intercambio de 1 GB
+- Agregar RAM Virtual de 1 GB
 - Instalación dinámica
 - Perfil de Ajuste en el Servidor.
 - Añadido fail2ban
 - Bloquea Automáticamente Algunos Anuncios de Forma Predeterminada.
-- Registro de Borrado Automático cada 3 minutos
 - Borrado Automatico De Usuarios Expirados
 - Detalles de Cuenta de Usuario
+- Bot Telegram En Español para Creacion de Usuarios
 
 ### INFORMACIÓN DE PUERTOS
 ```
@@ -33,16 +32,20 @@
 - VMESS GRPC 443
 - VMESS NONTLS 80
 - SSH WS / TLS 443
-- SSH NON TLS 8880
+- SSH NON TLS 80,8080,8280,8880
 - OVPN SSL/TCP 1194
 - SLOWDNS 5300
+- UDP Instalado por el Usuario
 ```
 
 ### CONFIGURACIÓNES CLOUDFLARE
 ```
 - SSL/TLS : FULL
-- SSL/TLS Recommender : OFF
 - GRPC : ON
 - WEBSOCKET : ON
-- Always Use HTTPS : OFF
-- UNDER ATTACK MODE : OFF
+- Zona Horaria Local: "UTC -6" MEXICO
+- Script En Español
+
+### CONTACTO DEL CREADOR
+WhatsApp: https://wa.me/+529241293310
+Telegram: t.me/Jerry_SBG
