@@ -51,5 +51,5 @@
 ```
 
 ### CONTACTO DEL CREADOR
-WHATSAPP: 📲 https://wa.me/+529241293310
-TELEGRAM: 📲 t.me/Jerry_SBG
+- WHATSAPP: 📲 https://wa.me/+529241293310
+- TELEGRAM: 📲 t.me/Jerry_SBG
