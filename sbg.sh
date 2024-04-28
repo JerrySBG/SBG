@@ -109,9 +109,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -135,7 +135,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}ACTIVO${NC})"
 Error="(${RED}EXPIRADO${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -348,8 +348,8 @@ TIMES="10"
 CHATID="833821933"
 KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $3}')
+USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $ipsaya | awk '{print $3}')
 TIMEZONE=$(printf '%(%I:%M %p)T')
 TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
