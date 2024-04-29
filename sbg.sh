@@ -816,7 +816,7 @@ clear
 print_install "Instalación UDP"
     wget https://raw.githubusercontent.com/JerrySBG/SBG/main/udp-costum.sh &&  chmod +x udp-costum.sh && ./udp-costum.sh
 print_success "UDP CUSTOM Instalado"
-fi
+}
 
 function ins_Fail2ban(){
 clear
