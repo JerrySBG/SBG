@@ -187,7 +187,7 @@ sleep 10
 exit 0
 else
 clear
-rm /usr/local/ddos
+rmdir /usr/local/ddos
 fi
 fi
 ### Status
