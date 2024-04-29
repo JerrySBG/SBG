@@ -868,8 +868,6 @@ systemctl enable ws
 systemctl enable tls
 systemctl start ws
 systemctl start tls
-systemctl restart ws
-systemctl restart tls
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
@@ -919,6 +917,7 @@ systemctl restart haproxy
     systemctl enable --now haproxy
     systemctl enable --now netfilter-persistent
     systemctl enable --now ws
+    systemctl enable --now tls
     systemctl enable --now fail2ban
 history -c
 echo "unset HISTFILE" >> /etc/profile
