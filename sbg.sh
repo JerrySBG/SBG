@@ -22,6 +22,7 @@ TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 
 # ===================
+function LOGO() {
 clear
    echo -e "                               
     ┌─────────────────────────────────────────┐
@@ -34,7 +35,7 @@ clear
          ${RED}Autoscript VPN (multi port)${FONT}    
 ${RED}Asegúrese de que Internet sea bueno al instalar el script${FONT}
         "
-
+}
 clear
   # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
@@ -52,8 +53,32 @@ echo -e " ${YELLOW} Autor : ${RED}JERRY࿐® ${NC}( ${YELLOW} Hecho en Mexico ${
 echo -e " ${RED} © DEV JERRY-SBG${YELLOW}(${YELLOW} 2024 ${NC})${NC}"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-sleep 2
+sleep 3
 ###### IZIN SC 
+ipsaya=$(wget -qO- ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/JerrySBG/SBG/main/ip"
+checking_sc() {
+  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
+  if [[ $date_list < $useexp ]]; then
+    echo -ne
+  else
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e "\033[42m          404 AUTOSCRIPT NO ENCONTRADO      \033[0m"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e ""
+    echo -e "              ${RED}PERMISO DENEGADO !${NC}"
+    echo -e "     \033[0;33mTU VPS${NC} $ipsaya \033[0;33mHA SIDO BANEADA${NC}"
+    echo -e " \033[0;33mComprar permisos de Acceso para el Scripts${NC}"
+    echo -e "           \033[0;33mContacto del Admin :${NC}"
+    echo -e "         ${Lgreen}Telegram${NC} t.me/Jerry_SGB"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/+529241293310"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    exit
+  fi
+}
+checking_sc 
 
 # // Checking Os Architecture
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
@@ -100,10 +125,6 @@ NC='\e[0m'
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mCargando...\e[0m"
 clear
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mCargando...\e[0m" 
-clear
 # Version sc
 clear
 #########################
@@ -135,7 +156,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}ACTIVO${NC})"
 Error="(${RED}EXPIRADO${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $MYIP | awk '{print $3}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -311,13 +332,14 @@ function base_package() {
 clear
 # Fungsi input domain
 function pasang_domain() {
+LOGO
 echo -e ""
 clear
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "   |\e[1;32mSeleccione un Tipo de Dominio a Continuación \e[0m|"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "     \e[1;32m1)\e[0m Dominio Propio (Recomendado)"
-echo -e "     \e[1;32m2)\e[0m Utilice un Dominio Aleatorio Personalizado (Digital Ocean) "
+echo -e "     \e[1;32m2)\e[0m Utilice un Dominio Aleatorio Personalizado "
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 read -p "   Seleccione los Números 1 o 2 Cualquier Botón (Aleatorio) : " host
 echo ""
@@ -766,7 +788,7 @@ print_success "Backup Server Instalado"
 clear
 function ins_swab(){
 clear
-print_install "Instalación Swap 1 Gb"
+print_install "Instalación Memoria RAM Virtual 1 Gb"
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
     gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
     curl -sL "$gotop_link" -o /tmp/gotop.deb
@@ -786,8 +808,15 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc tracking -v
     
     wget ${REPO}limit/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-print_success "Swap 1 Gb Instalado"
+print_success "Memoria RAM Virtual 1 Gb Instalado"
 }
+
+function ins_Udp(){
+clear
+print_install "Instalación UDP"
+    wget https://raw.githubusercontent.com/JerrySBG/SBG/main/udp-costum.sh &&  chmod +x udp-costum.sh && ./udp-costum.sh
+print_success "UDP CUSTOM Instalado"
+fi
 
 function ins_Fail2ban(){
 clear
@@ -1026,6 +1055,7 @@ clear
     ins_openvpn
     ins_backup
     ins_swab
+    ins_Udp
     ins_Fail2ban
     ins_epro
     ins_restart
