@@ -336,7 +336,7 @@ LOGO
 echo -e ""
 clear
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "   |\e[1;32mSeleccione un Tipo de Dominio a Continuación \e[0m"
+echo -e "    \e[1;32mSeleccione un Tipo de Dominio a Continuación \e[0m"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "     \e[1;32m1)\e[0m Dominio Propio (Recomendado)"
 echo -e "     \e[1;32m2)\e[0m Utilice un Dominio Aleatorio Personalizado "
