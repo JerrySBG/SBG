@@ -335,21 +335,21 @@ function pasang_domain() {
 LOGO
 echo -e ""
 clear
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "   |\e[1;32mSeleccione un Tipo de Dominio a Continuación \e[0m|"
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e "   |\e[1;32mSeleccione un Tipo de Dominio a Continuación \e[0m"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "     \e[1;32m1)\e[0m Dominio Propio (Recomendado)"
 echo -e "     \e[1;32m2)\e[0m Utilice un Dominio Aleatorio Personalizado "
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 read -p "   Seleccione los Números 1 o 2 Cualquier Botón (Aleatorio) : " host
 echo ""
 if [[ $host == "1" ]]; then
 echo -e "   \e[1;32mPor favor ingrese su Subdominio $NC"
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e " "
 read -p "   Subdominio: " host1
 echo ""
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
