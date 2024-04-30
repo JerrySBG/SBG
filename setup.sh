@@ -46,20 +46,20 @@ echo -e "\E[44;1;39m          ⇱ SCRIPT BY @XDecrytorId ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 5
-MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/JerrySBG/SBG/main/izin | grep $MYIP )
-echo "Memeriksa Hak Akses VPS..."
-if [ $MYIP = $IZIN ]; then
+#MYIP=$(wget -qO- ipinfo.io/ip);
+#IZIN=$( curl https://raw.githubusercontent.com/JerrySBG/SBG/main/izin | grep $MYIP )
+#echo "Memeriksa Hak Akses VPS..."
+#if [ $MYIP = $IZIN ]; then
 clear
 echo -e "${CYAN}Acceso permitido...${off}"
-sleep 1
-else
-clear
-echo -e "${PURPLE}Acceso Denegado!${off}"
-echo "Hanya Untuk Pengguna Berbayar!"
-echo "Silahkan Hubungi Admin"
-exit 0
-fi
+#sleep 1
+#else
+#clear
+#echo -e "${PURPLE}Acceso Denegado!${off}"
+#echo "Hanya Untuk Pengguna Berbayar!"
+#echo "Silahkan Hubungi Admin"
+#exit 0
+#fi
 clear
 echo "Checking VPS"
 clear
