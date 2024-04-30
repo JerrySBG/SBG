@@ -46,12 +46,12 @@ echo -e "\E[44;1;39m          ⇱ SCRIPT BY @XDecrytorId ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 5
-#MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- ipinfo.io/ip);
 #IZIN=$( curl https://raw.githubusercontent.com/JerrySBG/SBG/main/izin | grep $MYIP )
 #echo "Memeriksa Hak Akses VPS..."
 #if [ $MYIP = $IZIN ]; then
-clear
-echo -e "${CYAN}Acceso permitido...${off}"
+#clear
+#echo -e "${CYAN}Acceso permitido...${off}"
 #sleep 1
 #else
 #clear
@@ -66,7 +66,7 @@ clear
 sleep 1
 echo -e ""
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m          ⇱ @XDecrytorId PROJECT ⇲          \E[0m"
+echo -e "\E[44;1;39m          ⇱ @SBG PROJECT ⇲          \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
 sleep 2
