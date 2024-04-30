@@ -22,18 +22,6 @@ TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 
 clear
-   echo -e "                               
-    ┌─────────────────────────────────────────┐
- ───│                                         │───
- ───│$Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐ $NC   │───
- ───│$Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │  $NC   │───
- ───│$Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴  $NC   │───
-    │$GRAY https://t.me/Jerry_SBG       $NC   │
-    └─────────────────────────────────────────┘
-         ${RED}Autoscript VPN (multi port)${FONT}    
-${RED}Asegúrese de que Internet sea bueno al instalar el script${FONT}
-        "
-clear
   # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
 
@@ -104,7 +92,7 @@ fi
 
 # // Validate Successfull
 echo ""
-read -p "$( echo -e "Presione ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} Para iniciar la instalación") "
+read -p "$( echo -e "Presione ${GRAY}[ ${NC}${RED}Enter${NC} ${GRAY}]${YELLOW} Para iniciar la instalación") "
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
@@ -898,7 +886,6 @@ systemctl restart haproxy
     systemctl enable --now haproxy
     systemctl enable --now netfilter-persistent
     systemctl enable --now ws
-    systemctl enable --now tls
     systemctl enable --now fail2ban
 history -c
 echo "unset HISTFILE" >> /etc/profile
