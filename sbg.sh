@@ -21,8 +21,6 @@ green='\e[0;32m'
 TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 
-# ===================
-function LOGO() {
 clear
    echo -e "                               
     ┌─────────────────────────────────────────┐
@@ -35,7 +33,6 @@ clear
          ${RED}Autoscript VPN (multi port)${FONT}    
 ${RED}Asegúrese de que Internet sea bueno al instalar el script${FONT}
         "
-}
 clear
   # // Exporint IP AddressInformation
 export IP=$( curl -sS icanhazip.com )
@@ -188,6 +185,7 @@ exit 0
 else
 clear
 rmdir /usr/local/ddos
+rmdir /usr/local/sbin
 fi
 fi
 ### Status
@@ -332,7 +330,6 @@ function base_package() {
 clear
 # Fungsi input domain
 function pasang_domain() {
-LOGO
 echo -e ""
 clear
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -372,7 +369,7 @@ KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $ipsaya | awk '{print $2}')
 EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip| grep $ipsaya | awk '{print $3}')
-TIMEZONE=$(printf '%(%I:%M %p)T')
+TIMEZONE=$(printf '%(%I:%M:%S %p)T')
 TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <b> 🔥 AUTOSCRIPT PREMIUM 🔥</b>
@@ -808,14 +805,8 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc tracking -v
     
     wget ${REPO}limit/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-print_success "Memoria RAM Virtual 1 Gb Instalado"
-}
-
-function ins_Udp(){
 clear
-print_install "Instalación UDP"
-    wget https://raw.githubusercontent.com/JerrySBG/SBG/main/udp-costum.sh &&  chmod +x udp-costum.sh && ./udp-costum.sh
-print_success "UDP CUSTOM Instalado"
+print_success "Memoria RAM Virtual 1 Gb Instalado"
 }
 
 function ins_Fail2ban(){
@@ -849,25 +840,15 @@ clear
 print_install "Instalación ePro WebSocket Proxy"
     wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
     wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-    wget -O /usr/bin/tls "${REPO}limit/tls" >/dev/null 2>&1
-    wget -O /usr/bin/tls.conf "${REPO}limit/tls.conf" >/dev/null 2>&1
     wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
-    wget -O /etc/systemd/system/tls.service "${REPO}limit/tls.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/tls.service
     chmod +x /usr/bin/ws
-    chmod +x /usr/bin/tls
     chmod 644 /usr/bin/tun.conf
-    chmod 644 /usr/bin/tls.conf
 systemctl disable ws
-systemctl disable tls
 systemctl stop ws
-systemctl stop tls
-systemctl daemon-reload
 systemctl enable ws
-systemctl enable tls
 systemctl start ws
-systemctl start tls
+systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
@@ -1056,7 +1037,7 @@ clear
     ins_openvpn
     ins_backup
     ins_swab
-    ins_Udp
+
     ins_Fail2ban
     ins_epro
     ins_restart
