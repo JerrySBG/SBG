@@ -160,9 +160,9 @@ function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 function print_install() {
-    echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
+	echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
     echo -e "${YELLOW} # $1 ${FONT}"
-    echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
+	echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
     sleep 1
 }
 
@@ -172,9 +172,9 @@ function print_error() {
 
 function print_success() {
     if [[ 0 -eq $? ]]; then
-        echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
+		echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
         echo -e "${Green} # $1 Instalado Correctamente"
-        echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
+		echo -e '\e[32;1m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m'
         sleep 2
     fi
 }
@@ -220,7 +220,7 @@ print_install "Crear directorio de xray"
 
 # Change Environment System
 function first_setup(){
-    timedatectl set-timezone America/Denver
+    timedatectl set-timezone Asia/Jakarta
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
     print_success "Directory Xray"
@@ -548,8 +548,8 @@ echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
-# set time UTC -6
-ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
+# set time GMT +7
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -784,10 +784,10 @@ print_install "Instalación Fail2ban"
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
-    echo; echo; echo "Primero Desinstale la Versión Anterior"
-    exit 0
+	echo; echo; echo "Primero Desinstale la Versión Anterior"
+	exit 0
 else
-    mkdir /usr/local/ddos
+	mkdir /usr/local/ddos
 fi
 
 clear
@@ -901,29 +901,29 @@ menu
 EOF
 
 cat >/etc/cron.d/xp_all <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        2 0 * * * root /usr/local/sbin/xp
-    END
-    cat >/etc/cron.d/logclean <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        */20 * * * * root /usr/local/sbin/clearlog
-        END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		2 0 * * * root /usr/local/sbin/xp
+	END
+	cat >/etc/cron.d/logclean <<-END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		*/20 * * * * root /usr/local/sbin/clearlog
+		END
     chmod 644 /root/.profile
-    
+	
     cat >/etc/cron.d/daily_reboot <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        0 5 * * * root /sbin/reboot
-    END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		0 5 * * * root /sbin/reboot
+	END
 
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
     cat >/home/daily_reboot <<-END
-        5
-    END
+		5
+	END
 
 cat >/etc/systemd/system/rc-local.service <<EOF
 [Unit]
