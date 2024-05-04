@@ -53,9 +53,11 @@ wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
+    clear
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
+    clear
 echo -e ""
 echo -e "  \033[1;91m Descargado con Exito\033[1;37m"
 echo -e ""
