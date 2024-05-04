@@ -30,6 +30,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
+    rm -rf /usr/local/sbin/menu
     wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     unzip menu.zip
     chmod +x menu/*
