@@ -66,7 +66,7 @@ echo -e ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 #read -n 1 -s -r -p "Presione [ Enter ] para regresar al MENU"
-echo -e "Regresando al MENU"
+echo -e "    Regresando al MENU"
 sleep 1.5
 menu
 
