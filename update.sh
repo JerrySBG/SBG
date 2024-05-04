@@ -56,7 +56,7 @@ wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     clear
     clear
     clear
-    sleep 0.5
+    sleep 0.9
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
