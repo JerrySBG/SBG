@@ -54,6 +54,8 @@ wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
     clear
+    clear
+    clear
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
