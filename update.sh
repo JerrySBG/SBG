@@ -29,15 +29,15 @@ fun_bar() {
     echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
     tput cnorm
 }
-res1() {
-    wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
-    unzip menu.zip
-    chmod +x menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf update.sh
-}
+#res1() {
+#    wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
+#    unzip menu.zip
+#    chmod +x menu/*
+#    mv menu/* /usr/local/sbin
+#    rm -rf menu
+#    rm -rf menu.zip
+#    rm -rf update.sh
+#}
 netfilter-persistent
 clear
 figlet 'MODs By JERRY-SBG' | lolcat
@@ -48,7 +48,7 @@ echo -e ""
 echo -e "  \033[1;91m Descargando y Actualizando el Script\033[1;37m"
 echo -e ""
 #rm -rf /usr/local/sbin/menu
-fun_bar 'res1'
+#fun_bar 'res1'
 wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     unzip menu.zip
     chmod +x menu/*
@@ -56,6 +56,8 @@ wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
+echo -e ""
+echo -e "  \033[1;91m Descargado con Exito\033[1;37m"
 echo -e ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
