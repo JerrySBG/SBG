@@ -63,7 +63,9 @@ echo -e "  \033[1;91m Descargado con Exito\033[1;37m"
 echo -e ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-read -n 1 -s -r -p "Presione [ Enter ] para regresar al MENU"
+#read -n 1 -s -r -p "Presione [ Enter ] para regresar al MENU"
+echo -e "Regresando al MENU"
+sleep 0.5
 menu
 
 ###########- COLOR CODE -##############
