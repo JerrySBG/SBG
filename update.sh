@@ -49,6 +49,7 @@ echo -e "  \033[1;91m Descargando y Actualizando el Script\033[1;37m"
 echo -e ""
 #rm -rf /usr/local/sbin/menu
 fun_bar 'res1'
+
 echo -e ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
