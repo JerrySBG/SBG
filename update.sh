@@ -56,7 +56,6 @@ wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     clear
     clear
     clear
-    sleep 0.9
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
@@ -68,7 +67,7 @@ echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 #read -n 1 -s -r -p "Presione [ Enter ] para regresar al MENU"
 echo -e "Regresando al MENU"
-sleep 0.5
+sleep 1.5
 menu
 
 ###########- COLOR CODE -##############
