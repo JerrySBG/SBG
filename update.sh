@@ -52,7 +52,7 @@ echo -e ""
 wget https://raw.githubusercontent.com/JerrySBG/SBG/main/menu.zip
     unzip menu.zip
     chmod +x menu/*
-    mv menu/* /usr/local/sbin
+    mv menu/* /usr/bin
     clear
     clear
     clear
